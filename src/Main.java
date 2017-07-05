@@ -23,6 +23,9 @@ public class Main {
 
     }
 
+    /**
+     * This method i've implemented to run with cycles around Circle
+     */
     public static void process (double radius, double width){
         System.out.println("start");
         counter = 0;
