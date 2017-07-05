@@ -4,6 +4,7 @@
 import java.lang.Math.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -15,11 +16,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter radius: ");
-        double radius = scanner.nextDouble();
+        double radius = -1;
+        int width = -1;
+        try {
+            radius = scanner.nextDouble();
+        }catch (InputMismatchException a) {
+            System.out.print("You ought to input double radius");
+        }
         System.out.println("Enter length of segment: ");
-        int widht = scanner.nextInt();
-        process(radius,widht);
-        System.out.println("result " + result);
+        try {
+            width = scanner.nextInt();
+        }catch (InputMismatchException a) {
+            System.out.print("You ought to input integer length of segment");
+        }
+        if (radius+width !=-2){
+
+            process(radius,width);
+            System.out.println("result " + result);
+        }
 
     }
 
@@ -27,7 +41,6 @@ public class Main {
      * This method i've implemented to run with cycles around Circle
      */
     public static void process (double radius, double width){
-        System.out.println("start");
         counter = 0;
         Evaluate evaluate = new Evaluate(radius);
         //Dot tmp = new Dot ();

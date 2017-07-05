@@ -4,7 +4,7 @@
 import static java.lang.Math.*;
 
 /**
- * Created by vparshkin on 24/06/2017.
+ *  class of singke dot which is used to simplify calculation
  */
 public class Dot {
     public double angle;

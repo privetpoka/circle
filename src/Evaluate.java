@@ -2,6 +2,11 @@
  * Created by vparshkin on 03/07/2017.
  */
 import java.lang.Math.*;
+
+/**
+ * This class is for finding proper dots
+ *
+ */
 public class Evaluate {
 
     public  int res = 0;
@@ -50,6 +55,9 @@ public class Evaluate {
             }
 
         }else {
+            /**
+             * This is the main calculation algorithm of my program. Here i program calculate proper coordinates of nex dot
+             */
 
             double temp = (this.circle.radius * this.circle.radius + a * a + b * b - width * width) / (2 * a);
             double c = (b / a);
@@ -69,6 +77,9 @@ public class Evaluate {
         this.current_angle = this.current_dot.angle;
     }
 
+    /**
+     * This method is needed cos we x only > 0 because of sqrt. So we ought to change sign of x "manually"
+     */
     public Dot check_dot (Dot dot, double width){
 
 
