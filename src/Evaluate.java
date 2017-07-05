@@ -58,8 +58,6 @@ public class Evaluate {
             double y2 = (2 * c * temp - discriminant) / (2 * (c*c + 1));
             x = Math.sqrt( this.circle.radius*this.circle.radius - y*y);
             dot.init(check_dot(new Dot (x,y), width));
-           //System.out.println(dot.angle + " angle " + current_dot.angle);
-            //System.out.println(dot.quoter + " quoter " + current_dot.quoter);
             if (dot.angle < current_dot.angle || Math.abs(dot.quoter - current_dot.quoter) >1)
                 dot.init(check_dot(new Dot (x,y2), width));
             /*dot.x = x;
@@ -67,10 +65,6 @@ public class Evaluate {
             dot.setQuoter();
             dot.setAngle();*/
         }
-       // System.out.println(" length ");
-        //System.out.println(current_dot.x*current_dot.x + current_dot.y* current_dot.y);
-        //System.out.println (current_dot.x + " coordinates " + current_dot.y);
-        //System.out.println(" stop ");
         this.current_dot.init(dot);
         this.current_angle = this.current_dot.angle;
     }
@@ -79,10 +73,8 @@ public class Evaluate {
 
 
         double len = Math.pow(dot.x-current_dot.x,2) + Math.pow(dot.y-current_dot.y,2);
-        //System.out.println( " Len1: " + Math.abs(Math.sqrt(len)));
         if (Math.abs(Math.sqrt(len) - width) > width/10)
             dot.init(-dot.x,dot.y);
-        //System.out.println( " Len2: " + Math.abs(Math.sqrt(len)));
         return dot;
 
 
